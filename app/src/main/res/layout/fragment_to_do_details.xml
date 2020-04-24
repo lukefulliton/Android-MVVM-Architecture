@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+        <data>
+            <variable
+                name="viewModel"
+                type="com.example.mvvm.ui.toDo.viewModel.ToDoDetailsViewModel" />
+            <variable
+                name="spinnerCallback"
+                type="com.example.mvvm.global.interfaces.callbacks.SpinnerCallback" />
+        </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/to_do_details_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            android:text="@{viewModel.toDo.title}"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:text="Title"/>
+
+        <Switch
+            android:id="@+id/to_do_is_complete"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:text="Is Complete"
+            android:textSize="20sp"
+            android:checked="@={viewModel.toDo.complete}"
+            app:layout_constraintTop_toBottomOf="@+id/to_do_details_title"
+            app:layout_constraintBottom_toTopOf="@+id/to_do_priority_spinner"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+
+        <!--Order of DataBinding does impact the order in which items are data bound.-->
+        <Spinner
+            android:id="@+id/to_do_priority_spinner"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            app:bindAdapter="@{viewModel.spinnerPriorityAdapter}"
+            app:onItemSelected="@{spinnerCallback}"
+            android:selectedItemPosition="@={viewModel.priorityPosition}"
+            app:layout_constraintTop_toBottomOf="@+id/to_do_is_complete"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">Android-MVVM-Architecture</string>
+    <string name="authentication_activity">Authentication Activity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="menu_to_do_list">To Do List</string>
+    <string name="menu_to_do_details">To Do Details</string>
+    <string name="menu_logout">Sign Out</string>
+
+    <string name="home_second">Home Second</string>
+
+    <string-array name="to_do_priorities">
+        <item>Low Priority</item>
+        <item>Medium Priority</item>
+        <item>High Priority</item>
+        <item>Very High Priority</item>
+    </string-array>
+</resources>
