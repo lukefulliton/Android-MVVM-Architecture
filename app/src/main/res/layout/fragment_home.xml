@@ -14,6 +14,22 @@
         android:layout_height="match_parent"
         tools:context=".ui.home.HomeFragment">
 
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/home_fragment_vertical_left"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="40dp"
+            />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/home_fragment_vertical_right"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="40dp"
+            />
+
         <TextView
             android:id="@+id/text_home"
             android:layout_width="match_parent"
@@ -23,6 +39,7 @@
             android:layout_marginEnd="8dp"
             android:textAlignment="center"
             android:textSize="20sp"
+            android:textColor="?android:attr/textColorPrimary"
             app:layout_constraintBottom_toTopOf="@+id/home_child_fragment"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -33,8 +50,8 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/home_fragment_vertical_right"
+            app:layout_constraintStart_toStartOf="@+id/home_fragment_vertical_left"
             app:layout_constraintTop_toBottomOf="@+id/text_home" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
